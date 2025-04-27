@@ -1,0 +1,97 @@
+.container {
+  background-color: red;
+  height: 15rem;
+  aspect-ratio: 16/9;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  & .header {
+    /* background-color: yellow; */
+    /* background-image: linear-gradient(to right, yellow 10% 50%, green 50% 100%); */
+    /* background-image: radial-gradient(at center, yellow, green 50% 60%, blue); */
+    background-image: conic-gradient(yellow, green, blue, orange, red);
+    height: 10rem;
+    aspect-ratio: 16/9;
+    display: flex;
+    gap: 0.5rem;
+    justify-content: space-between;
+    /* align-items: center; */
+    /* padding: 1rem 4rem 1rem 3rem; */
+
+    /* .container .header:hover .h1{} */
+    /* &:hover .h1{ */
+    /* & .h1:last-child{ */
+    /* & .h1:first-child{ */
+    /* & .h1:nth-child(3){ */
+
+    & .h1 {
+      color: green;
+      position: relative;
+      height: fit-content;
+      width: fit-content;
+      font-size: 16px;
+
+      /* display: inline; */
+      /* display: inline-block; */
+      /* &:nth-child(2):hover{ */
+      &:hover {
+        color: red;
+        /* animation: rn 2s infinite alternate-reverse; */
+      }
+    }
+
+    & .h1:nth-child(2)::before {
+      content: "";
+      position: absolute;
+      height: 10%;
+      width: 0%;
+      background-color: black;
+      top: 100%;
+      left: 0;
+
+      /* transform: translateX(-100%); */
+    }
+
+  /* & .h1:hover::before{
+    animation: rn2 2s ease-out;
+  } */
+  }
+}
+
+
+@keyframes rn {
+  from {
+    /* color: red; */
+    width: 0;
+  }
+
+  to {
+    /* color: green; */
+    /* font-size: 2rem;
+     */
+    width: 100%;
+  }
+}
+
+@keyframes rn2 {
+  0%{
+    width: 0;
+  }
+  30%{
+    width: 50%
+  }
+
+  60%{
+    width: 10%
+  }
+  100%{
+    width: 100%
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .container {
+    background-color: blue;
+  }
+}
