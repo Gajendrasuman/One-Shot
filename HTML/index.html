@@ -52,6 +52,22 @@
   <!-- <div class="container">
 
   </div> -->
+
+  <progress value="85" max="100" step="10" style="background: #f0f; border-radius: 5px"></progress>
+      <input oninput="change()" id="slider" type="range" max="100" min="10" value="20"  step="1"/>
+      <p>0%</p>
+      <script type="text/javascript" charset="utf-8">
+        const pr = document.querySelector("progress")
+        const inp = document.querySelector("#slider")
+        const p = document.querySelector("p")
+        p.innerText = inp.value + "%"
+        pr.value = inp.value
+        console.log(inp);
+        const change = () => {
+          pr.value = inp.value
+          p.innerText = inp.value + "%"
+        }
+      </script>
   
   <script src="../js/script.js"></script>
 </body>
